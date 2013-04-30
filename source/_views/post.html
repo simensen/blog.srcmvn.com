@@ -2,10 +2,22 @@
 {% block content_wrapper %}
     <article>
         <header>
-            <h2>{{ page.title }} <small>post</small></h2>
+            <h2>{{ page.title }} <small><time datetime="{{ page.date|date('c') }}" pubdate>
+                <span class='month'>{{ page.date|date('M') }}</span> <span class='day'>{{ page.date|date('jS') }}</span> <span class='year'>{{ page.date|date('Y') }}</span>
+            </time></small></h2>
         </header>
         <div>
             {{ page.blocks.content|raw }}
+            {% if page.posterous_images|length > 0 %}
+                <p>
+                    {% for image in page.posterous_images %}
+                        {% if image.scaled500 is defined %}{% set scaled_image = image.scaled500 %}
+                        {% elseif image.scaled1000 is defined %}{% set scaled_image = image.scaled1000 %}
+                        {% else %}{% set scaled_image = image.full %}{% endif %}
+                        <a href="{{ image.full.url }}" style="border: 2px solid #555; display: inline-block; width: 75px; height: 75px; background-image: url({{ scaled_image.url }}); background-size: cover; text-indent: 100%; white-space: nowrap; overflow: hidden;">{{ loop.index }}</a>
+                    {% endfor %}
+                </p>
+            {% endif %}
         </div>
         {% if page.categories %}
             <p class="categories">
