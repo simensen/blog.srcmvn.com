@@ -1,0 +1,31 @@
+---
+layout: post
+title: Tying It All Together
+published: true
+tags:
+- halo
+- php
+- repose
+- substrate
+date: '2009-01-04 13:13:00'
+posterous_id: 10668793
+posterous_url: http://blog.srcmvn.com/tying-it-all-together
+posterous_slug: tying-it-all-together
+permalink: tying-it-all-together/index.html
+posterous_images: []
+---
+<p>The development version of the <a href="http://s3a.us/">s3a site</a> now has <a href="http://respose-php.org/">Repose</a> running behind the scenes in a few places. I am very pleased that Repose integrated with <a href="http://substrate-php.org/">Substrate</a> and <a href="http://halo-php.org/">Halo</a> more or less out of the box.  I created a Substrate FactoryObject <code>substrate_orm_repose_SessionFactoryFactoryObject</code> to make Repose configuration and Session Factory building more simple from a Substrate context.  The follow is the entire contents of repose.context.php:</p>
+<p><p><a href="https://gist.github.com/288222">https://gist.github.com/288222</a></p></p>
+<p>I created an abstract Repose Repository class that the various repositories in the system can reference.</p>
+<p><p><a href="https://gist.github.com/288224">https://gist.github.com/288224</a></p></p>
+<p>The first Repository created was the Space Repository. The Space Repository interface is defined like this:</p>
+<p><p><a href="https://gist.github.com/288225">https://gist.github.com/288225</a></p></p>
+<p>The Repose implementation of the Space Repository interface is defined like this:</p>
+<p><p><a href="https://gist.github.com/288226">https://gist.github.com/288226</a></p></p>
+<p>And finally, the s3a_spaceRepository.context.php is defined like this:</p>
+<p><p><a href="https://gist.github.com/288229">https://gist.github.com/288229</a></p></p>
+<p>This all comes together in a Halo controller, s3a_controllers_admin_SpaceEditController. The specific details of how onSubmit() and referenceData() are called our beyond the scope of this post, but hopefully it is obvious what is going on.</p>
+<p><p><a href="https://gist.github.com/288230">https://gist.github.com/288230</a></p></p>
+<p>And the Halo Admin controllers context configuration contains the following:</p>
+<p><p><a href="https://gist.github.com/288231">https://gist.github.com/288231</a></p></p>
+<p>Wire up some URL routing and it is all set!</p>

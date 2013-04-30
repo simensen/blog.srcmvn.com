@@ -1,0 +1,18 @@
+---
+layout: post
+title: "PHP count() does something different that you might expect for zero \tlength strings"
+published: true
+tags:
+- php
+date: '2010-02-02 15:41:20'
+posterous_id: 11010068
+posterous_url: http://blog.srcmvn.com/php-count-does-something-different-that-you-m
+posterous_slug: php-count-does-something-different-that-you-m
+permalink: php-count-does-something-different-that-you-m/index.html
+posterous_images:
+    - full:
+        url: /images/php.gif
+        width: 120
+        height: 67
+---
+<img src="/images/php.gif" alt="PHP count() does something different that you might expect for zero 	length strings " /><p></p><div>The code I was working in may have been poor anyway, but it highlighted an oddity about <a href="http://php.net/manual/en/function.count.php">count()</a> that I had not known before. If given an array, count() returns the number of items in the array. If given an <b>object</b>, it returns the number of properties on the object.</div> <p /><div>How could this be an issue? Take this example:</div><p /><div><script src="https://gist.github.com/293151.js"></script></div><p /><div>I was seeing an error on line 6 (&quot;Message: Invalid argument supplied for foreach()&quot;). It should not be getting further than the count() check if it was an array, right? So I decided to experiment...</div> <p /><script src="https://gist.github.com/293147.js"></script><p />Turns out the incoming data was not secure and where an array was expected, there was the possibility of receiving a zero length string.

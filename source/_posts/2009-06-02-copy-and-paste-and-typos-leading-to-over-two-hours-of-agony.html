@@ -1,0 +1,19 @@
+---
+layout: post
+title: Copy and paste and typos leading to over two hours of agony
+published: true
+tags: []
+date: '2009-06-02 20:13:00'
+posterous_id: 10668840
+posterous_url: http://blog.srcmvn.com/copy-and-paste-and-typos-leading-to-over-two
+posterous_slug: copy-and-paste-and-typos-leading-to-over-two
+permalink: copy-and-paste-and-typos-leading-to-over-two/index.html
+posterous_images: []
+---
+<p>Yeah. Gotta love copy and paste errors leading to several hours of lost development time.</p>
+<p>I had initially copied an&nbsp;xmlns&nbsp;namespace URI from actual AWS S3 XML output so I assumed it was pure and clean. It turns out that it was not nearly as clean as I had hoped. Somehow the URI had lost a <strong>/</strong> along the way.</p>
+<p><p><a href="https://gist.github.com/288208">https://gist.github.com/288208</a></p></p>
+<p>Since <a href="http://us.php.net/manual/en/domxpath.registernamespace.php#51480">PHP XPath is stupid when it comes to documents with a default xmlns</a>, having an&nbsp;xmlns registered was required and since it was not pasted correctly (with no warnings stating as much) none of my XPath queries would give me any results.</p>
+<p>Having never actually had PHP XPath function correctly, I really had no idea what could be wrong and focused mainly on XPath dialect and various combinations of prefixes and queries.</p>
+<p>Thinking it could have been something as simple as a typo in the namespace UI I did actually do a few fresh copy and pastes of the URI several times.</p>
+<p>At this point I am not even sure how the URI text was corrupted. I cannot help but feel like I should have figured it out earlier. This is a lesson I have learned so many times, yet it keeps taking me by surprise even when I'm expecting it to be lurking around the corner.</p>

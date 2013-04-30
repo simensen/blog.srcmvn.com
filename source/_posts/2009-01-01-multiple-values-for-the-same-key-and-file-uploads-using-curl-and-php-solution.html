@@ -1,0 +1,17 @@
+---
+layout: post
+title: Multiple values for the same key and file uploads using cURL and PHP "solution"
+published: true
+tags: []
+date: '2009-01-01 15:04:00'
+posterous_id: 10668791
+posterous_url: http://blog.srcmvn.com/multiple-values-for-the-same-key-and-file-upl
+posterous_slug: multiple-values-for-the-same-key-and-file-upl
+permalink: multiple-values-for-the-same-key-and-file-upl/index.html
+posterous_images: []
+---
+<p>So, after four days of asking questions at various places (including the <a href="http://curl.haxx.se/mail/curlphp-2008-12/0009.html">cURL PHP mailing list</a> and <a href="http://stackoverflow.com/questions/402679/mixing-multiple-values-for-the-same-key-and-file-uploads-using-curl-and-php">Stackoverflow</a>) I have come to a solution to this on my own.  To the best of my knowledge, the <a href="http://php.net/curl">cURL PHP bindings</a> do not support sending more than one value for the same key, whether I specify the <em>[]</em> at the end of the key name or not (although it is important to note that the field that I had to send was actually <em>tag</em>, and not <em>tag[]</em>&nbsp;so that point really doesn't matter).  The solution was to build a <em>multipart/form-data</em> string and set that for <em>CURLOPT_POSTFIELDS</em>.  Usage is as follows</p>
+<p><p><a href="https://gist.github.com/288240">https://gist.github.com/288240</a></p></p>
+<p>... and the function:</p>
+<p><p><a href="https://gist.github.com/288242">https://gist.github.com/288242</a></p></p>
+<p>It can most definitely use some work. I do not know the hash stuff well enough to know whether or not one could always assume <em>sha1</em> or <em>md5</em> will always be available. I wrote it this way to be safe. If either of those are not available, just use the first one there and hopefully that would suffice.</p>

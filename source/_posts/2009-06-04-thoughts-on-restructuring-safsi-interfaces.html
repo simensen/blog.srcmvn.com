@@ -1,0 +1,15 @@
+---
+layout: post
+title: Thoughts on restructuring Safsi interfaces
+published: true
+tags: []
+date: '2009-06-04 06:25:00'
+posterous_id: 10668842
+posterous_url: http://blog.srcmvn.com/thoughts-on-restructuring-safsi-interfaces
+posterous_slug: thoughts-on-restructuring-safsi-interfaces
+permalink: thoughts-on-restructuring-safsi-interfaces/index.html
+posterous_images: []
+---
+<p>While working on the AWS S3 code last night it really set in that perhaps the Container interface is not needed for Safsi. The File System and Object interfaces might be the only components required. I may have tried to model Safsi too closely after two of the three target implementations and let it cloud my judgement.</p>
+<p>I should have thought of this earlier, as the container interface was a difficult concept to grasp when building out the Local Disk implementation. It just didn't feel right. Removing this concept altogether will simplify things a great deal and will make Safsi even easier to use.</p>
+<p>Now the question becomes, which makes more sense to maintain at the root, IFileSystem or IContainer? I am leaning in the direction of IFileSystem but will think about it a little more.</p>

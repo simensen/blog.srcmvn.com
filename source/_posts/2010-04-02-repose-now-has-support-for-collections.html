@@ -1,0 +1,19 @@
+---
+layout: post
+title: Repose now has support for collections.
+published: true
+tags:
+- d2code
+- repose
+date: '2010-04-02 03:30:25'
+posterous_id: 15134493
+posterous_url: http://blog.srcmvn.com/repose-now-has-support-for-collections
+posterous_slug: repose-now-has-support-for-collections
+permalink: repose-now-has-support-for-collections/index.html
+posterous_images:
+    - full:
+        url: /images/repose-logo-200x48.png
+        width: 200
+        height: 48
+---
+<img src="/images/repose-logo-200x48.png" alt="Repose now has support for collections. " /><p>A huge milestone has been passed for <a href="http://repose-php.org/">Repose</a>. To the best of my ability to test it after 3:00am, Repose now supports <a href="http://github.com/dflydev/repose-php/commit/7979ea73ccffbcfcdb7ad94278b2a775e26e0378">array collections</a>. Some <a href="http://github.com/dflydev/repose-php/commit/59e21a60e46469a8d36d72d32d7b0de2a4a5b08d">unit testing</a> has been checked in as well. I am super excited about this.</p><p /><div>Here is a quick example configuration taking advantage of the collection feature to handle one-to-many relationships. Take a look at the sample_Project&#39;s &quot;bugs&quot; property to see how it is setup. In particular, pay attention to the backref definition. This specifies which property on the related sample_User class refers back to the project.<br /> <p /><div><script src="https://gist.github.com/353003.js"></script><p /></div><div>The project class only needs to define a $bugs property and treat it like an array.</div><p /><div><script src="https://gist.github.com/353009.js"></script></div><div><br />Once setup properly, adding a new bug that references an existing project will automatically insert the bug into the project&#39;s bugs array. And the first time the caller references $project-&gt;bugs the datastore will be queried for all bugs that reference the project.</div> <p /></div>

@@ -1,0 +1,19 @@
+---
+layout: post
+title: WebOb Request and making wsgi.input safe for reuse
+published: true
+tags:
+- python
+- WebOb
+- wsgi
+date: '2010-02-24 13:07:49'
+posterous_id: 12253746
+posterous_url: http://blog.srcmvn.com/webob-request-and-making-wsgiinput-safe-for-r
+posterous_slug: webob-request-and-making-wsgiinput-safe-for-r
+permalink: webob-request-and-making-wsgiinput-safe-for-r/index.html
+posterous_images: []
+---
+<p>I ran into an intermittent problem with a Python application when trying to use <a href="http://www.uploadify.com/">Uploadify</a>. For whatever reason (I never figured out why), only in the case of the file upload through Flash my app was trying to read from wsgi.input a second time. This was causing a timeout since wsgi.input had already been consumed.</p>
+<p>I had read about <a href="http://pythonpaste.org/webob/">WebOb</a> Request possibly being able to help these types of situations, but there were no docs that I could find to show how to make it work. And since I was actually using WebOb in all locations (Routes uses WebOb Request, as did my application) it clearly wasn't activating the "make wsgi.input safe" functionality on its own.</p>
+<p>I ended up create a small wrapper WSGI application that seems to have done the trick. It is possible this is already a middleware application somewhere in WebOb but if it is I have no idea how one would know how to find it.</p>
+<p><p><a href="https://gist.github.com/313844">https://gist.github.com/313844</a></p></p>

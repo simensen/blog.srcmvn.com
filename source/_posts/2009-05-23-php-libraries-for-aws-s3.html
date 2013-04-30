@@ -1,0 +1,18 @@
+---
+layout: post
+title: PHP libraries for AWS S3
+published: true
+tags: []
+date: '2009-05-23 12:13:00'
+posterous_id: 10668838
+posterous_url: http://blog.srcmvn.com/php-libraries-for-aws-s3
+posterous_slug: php-libraries-for-aws-s3
+permalink: php-libraries-for-aws-s3/index.html
+posterous_images: []
+---
+<p>In the time since I first started looking into S3 (maybe 2 years ago?) it seems like not a lot of progress has been made on a really good library for manipulating S3 in PHP. I imagine this is partly due to the fact it is somewhat trivial to roll your own if you only focus on the features you actually need.&nbsp;Maybe if AWS would actually release and maintain a library themselves it would help.</p>
+<p>Meanwhile, we're stuck wading through any number of library options, trying to determine which ones are less half baked than any of the others.</p>
+<p>So far I've found two that look promising, <a href="http://code.google.com/p/php-aws/">php-aws</a> and <a href="http://undesigned.org.za/2007/10/22/amazon-s3-php-class">Amazon S3 PHP Class</a> (<a href="http://code.google.com/p/amazon-s3-php-class/">amazon-s3-php-class</a> on Google code). php-aws looks clean, though maybe not as many features. I was really excited about amazon-s3-php-class until I looked more closely at the code. Really not super stoked on the fact that the object looks to be a front to static data.</p>
+<p>If neither of these implementations work out, I may have to write my own lite weight S3 library, possibly referencing large chunks of either of these two libraries.</p>
+<p>Bundling an S3 implementation with Safsi might be required anyway, as it would limit the amount of dependencies on other third party libraries. I was sort of hoping to leverage someone else's code here, though. Otherwise I'll just end up contributing Yet Another S3 Library For PHP.</p>
+<p>Here is to hoping that the CloudFiles implementation provided by Mosso live up to my requirements.</p>

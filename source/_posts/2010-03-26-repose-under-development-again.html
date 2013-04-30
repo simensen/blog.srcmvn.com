@@ -1,0 +1,20 @@
+---
+layout: post
+title: Repose under development. Again.
+published: true
+tags:
+- d2code
+- php
+- repose
+date: '2010-03-26 13:49:22'
+posterous_id: 14603711
+posterous_url: http://blog.srcmvn.com/repose-under-development-again
+posterous_slug: repose-under-development-again
+permalink: repose-under-development-again/index.html
+posterous_images:
+    - full:
+        url: /images/repose-logo-200x48.png
+        width: 200
+        height: 48
+---
+<img src="/images/repose-logo-200x48.png" alt="Repose under development. Again." /><p>Less than a week ago, I started working on rebuilding <a href="http://repose-php.org/">Repose</a>, my PHP ORM persistence layer, from the ground up.</p><p /><div>The original Repose worked pretty well, but it was very much an experiment on whether or not doing so was possible. With this recent rebuild, I have been able to apply a lot of things from recent experiences with <a href="http://www.sqlalchemy.org/">SQLAlchemy</a> to what I had already known about <a href="http://www.hibernate.org/">Hibernate</a>. The result? A fundamental change in the core principles behind Repose. Changes that are going to be much better in the long run.<div> <p /><div>The only major downside right now is that there was one major change made to the requirements of model objects. Repose is no longer going to support protected properties for PHP &lt; 5.3. This is a huge bummer to me, but it is the only way to really make Repose shine.</div> <p /><div>Once versions of PHP that support <i>ReflectionProperty::setAccessible()</i> become more mainstream, people will be able to start using Repose on models with protected and private properties without a problem. And that will be awesome.<br /> </div><p /></div></div>

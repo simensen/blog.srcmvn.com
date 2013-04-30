@@ -1,0 +1,15 @@
+---
+layout: post
+title: Working on AWS S3 code for Safsi
+published: true
+tags: []
+date: '2009-06-02 20:25:00'
+posterous_id: 10668841
+posterous_url: http://blog.srcmvn.com/working-on-aws-s3-code-for-safsi
+posterous_slug: working-on-aws-s3-code-for-safsi
+permalink: working-on-aws-s3-code-for-safsi/index.html
+posterous_images: []
+---
+<p>I've decided to work on my own AWS S3 implementation for <a href="http://code.google.com/p/safsi-php/">Safsi</a>. No real idea how far out the AWS S3 related code is from being checked in, but it is definitely high priority on my list of personal projects as several projects could leverage this code <em>now</em>.</p>
+<p>I have been borrowing a lot of ideas from&nbsp;<a href="http://code.google.com/p/php-aws/">php-aws</a> and&nbsp;<a href="http://undesigned.org.za/2007/10/22/amazon-s3-php-class">Amazon S3 PHP Class</a> (<a href="http://code.google.com/p/amazon-s3-php-class/">amazon-s3-php-class</a> on Google code). Anyone looking for general AWS libraries would do well to check out either of these libraries!</p>
+<p>I have every intention of keeping the Safsi AWS S3 and Cloud Front code standalone in the sense that the AWS related code should be usable without actually using the Safsi file system interfaces. Will anyone use them if they are only available as a part of the Safsi distribution? I am not sure, but I do like the idea of keeping the AWS interface code uncoupled from the Safsi file system interfaces.</p>

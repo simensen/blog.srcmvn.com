@@ -1,0 +1,23 @@
+---
+layout: post
+title: Wordpress and Posting Source Code
+published: true
+tags: []
+date: '2009-01-07 18:03:00'
+posterous_id: 10668795
+posterous_url: http://blog.srcmvn.com/wordpress-and-posting-source-code
+posterous_slug: wordpress-and-posting-source-code
+permalink: wordpress-and-posting-source-code/index.html
+posterous_images: []
+---
+<p>Posting Source Code with Wordpress is a pain in the ass. Is this really the way that the world handles dealing with source code in blogs? I know, not everyone in the world uses Wordpress. But a good chunk does. And Blogger's support for sourcecode was even worse.</p>
+<h3>Trimming Leading White Space</h3>
+<p>I had been using <a href="http://wordpress.org/extend/plugins/syntaxhighlighter/">SyntaxHighlighter</a>, but I ran into a nasty problem when swapping from the HTML tab to the Visual tab in the editor. Since SyntaxHighlighter uses bbcode [ sourcecode][ /sourcecode], and not a PRE tag, it looks like TinyMCE is trimming the leading whitespace. What this means is that although the SyntaxHighlighter plugin claims that:</p>
+<blockquote class="posterous_short_quote">
+<p>SyntaxHighlighter allows you to easily post syntax highlighted code all without loosing it's formatting or making an manual changes.</p>
+</blockquote>
+<p>... this does not actually seem to be the case. I lose all of my leading whitespace in visual mode and have to add it in again by hand in HTML mode.</p>
+<p>I would love to find out how to get TinyMCE or Wordpress (or the combination of) to stop stripping whitepsace within the sourcecode bbcode tag. I have a sneaking suspicion that it is TinyMCE or an integration point, as the probably seems to happy completely on the client side with just flipping between tabs.</p>
+<h3>Suggestions!</h3>
+<p>I would love to get some feedback on how to simply post source code using Wordpress. I am almost to the point that I do not really even want to have syntax highlighting enabled. I just want to be able to paste code into Visual and possibly tweak it in HTML if I absolutely need to. And if tweaking in the HTML tab is required, I need for it to be able to survive clicking back to the Visual tab.</p>
+<p>Help? :)</p>

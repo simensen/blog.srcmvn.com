@@ -1,0 +1,15 @@
+---
+layout: post
+title: "mod_rewrite differences between .htaccess and main apache configuration"
+published: true
+tags:
+- .htaccess
+- apache
+date: '2010-01-30 18:00:31'
+posterous_id: 10847125
+posterous_url: http://blog.srcmvn.com/modrewrite-differences-between-htaccess-and-m
+posterous_slug: modrewrite-differences-between-htaccess-and-m
+permalink: modrewrite-differences-between-htaccess-and-m/index.html
+posterous_images: []
+---
+I am often burned by the fact that the rules I use for .htaccess do not work exactly the same when I add them to the main configuration file. Recently I wanted to redirect any request for a file that does not actually exist to another server. I do this pretty frequently in .htaccess files a certain way, but it took awhile for me to figure out how to get it to work from the main configuration file.<p /><div><p><a href="https://gist.github.com/290835">https://gist.github.com/290835</a></p><br /></div><p /><div>I need to collect more of these examples and maybe try to figure out when and why the behavior changes. If there is a possibility of something always working, regardless of the case, I need to try to get used to using that method instead.</div>

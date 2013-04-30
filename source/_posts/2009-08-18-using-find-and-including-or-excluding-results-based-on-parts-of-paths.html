@@ -1,0 +1,19 @@
+---
+layout: post
+title: Using find and including or excluding results based on parts of paths
+published: true
+tags:
+- find
+- shell
+date: '2009-08-18 08:44:00'
+posterous_id: 10668852
+posterous_url: http://blog.srcmvn.com/using-find-and-including-or-excluding-results
+posterous_slug: using-find-and-including-or-excluding-results
+permalink: using-find-and-including-or-excluding-results/index.html
+posterous_images: []
+---
+<p>The find utility is a great tool (though I know many people who prefer to just use xargs or grep -r) but I always find it a little difficult to remember how to filter out results based on parts of the path instead of just on the name of the actual file. Most often this comes up when working in a cvs or svn working directory and the meta files ( .svn/* or .cvs/* files ) match when they really do not need to. What is an easy way to filter out files that live in, say, a subversion folder?</p>
+<blockquote class="posterous_short_quote">
+<p>find ! -regex '.*\.svn.*'</p>
+</blockquote>
+<p>The key thing to remember is that the regex is rooted (meaning that it will try to match the <strong>entire</strong> path) so the leading and trailing&nbsp;<em>.*</em> are the important bits. Otherwise it won't look like it is working.</p>

@@ -1,0 +1,16 @@
+---
+layout: post
+title: Simple Abstract File System Interface
+published: true
+tags: []
+date: '2009-05-13 16:56:00'
+posterous_id: 10668835
+posterous_url: http://blog.srcmvn.com/simple-abstract-file-system-interface
+posterous_slug: simple-abstract-file-system-interface
+permalink: simple-abstract-file-system-interface/index.html
+posterous_images: []
+---
+<p>After spending some time looking into S3 and CloudFiles I decided that I didn't really want to lock into one vendor for storage. I also was not keen on the idea of relying on S3 or CloudFiles for development installations. I did a quick search for an abstraction layer for PHP that would let me choose one, or the other, and not have to change much of my implementation code. Utilizing a dependency injection framework like <a href="http://substrate-php.org/">Substrate</a> would make this all the more desirable.</p>
+<p>My search was neither long nor fruitful. There are several standalone libraries for accessing S3and Mosso provides a pretty complete PHP solution for accessing CloudFiles. However, from my searching I was unable to locate an abstraction library that would let me move between implementations freely.</p>
+<p>My goal is for Safsi to fill this hole. I intend to write Local Disk, S3 and CloudFiles implementations. This should let a user code using a Local Disk implementation in a development environment and use either a S3 or CloudFiles implementation in production. It should also allow a production environment to switch from one storage provider to another (S3 to CloudFiles or CloudFiles to S3).</p>
+<p>Safsi has a <a href="http://code.google.com/p/safsi-php/">project page on Google code</a>. Not sure how quickly I'll have something useful given my busy schedule for the foreseeable future but I definitely plan on working on this project along side <a href="http://not-invented-here.com/software-projects/">my other software projects.</a></p>

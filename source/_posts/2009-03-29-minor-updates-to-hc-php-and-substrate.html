@@ -1,0 +1,17 @@
+---
+layout: post
+title: Minor updates to hc-php and Substrate
+published: true
+tags: []
+date: '2009-03-29 16:31:00'
+posterous_id: 10668829
+posterous_url: http://blog.srcmvn.com/minor-updates-to-hc-php-and-substrate
+posterous_slug: minor-updates-to-hc-php-and-substrate
+permalink: minor-updates-to-hc-php-and-substrate/index.html
+posterous_images: []
+---
+<p>I checked in a couple of minor changes to <a href="http://code.google.com/p/hc-php/">hc-php</a> and to <a href="http://substrate-php.org/">Substrate</a> tonight.  Two implementations of hc_configuration_IConfiguration were added, hc_configuration_PdoConfiguration and hc_configuration_CompositeConfiguration. Both are pretty naieve examples of implementation hc_configuration_IConfiguration (both are backed by hc_configuration_MapConfiguration) but they get the job done.  The following is an example of being able to set defaults in a properties file and allowing for overriding defaults in a database.</p>
+<p><p><a href="https://gist.github.com/288213">https://gist.github.com/288213</a></p></p>
+<p>In this case, the stringConfiguration object will combine the properties from the strings.properties file and the values stored in the database. I am using this with a new <a href="http://halo-php.org/">Halo</a> View Helper named&nbsp;halo_StringViewHelper. Look for more information on that soon, but here is a quick usage example from a Skittle template.</p>
+<p><p><a href="https://gist.github.com/288216">https://gist.github.com/288216</a></p></p>
+<p>First, the properties configuration is checked for name.long, and if it is not located the PDO configuration is checked. If neither configuration contains the key name.long, then ${name.long} is entered into the template.</p>

@@ -1,0 +1,15 @@
+---
+layout: post
+title: Using 3rd party libraries with Halo
+published: true
+tags: []
+date: '2009-03-09 15:13:00'
+posterous_id: 10668823
+posterous_url: http://blog.srcmvn.com/using-3rd-party-libraries-with-halo
+posterous_slug: using-3rd-party-libraries-with-halo
+permalink: using-3rd-party-libraries-with-halo/index.html
+posterous_images: []
+---
+<p>To use a 3rd party library with Halo, the most straightforward solution is to add the library files to a sub directory under vendors/. For the single site example distributed with Halo, the vendors folder consists of <a href="http://code.google.com/p/hc-php/">hc-php</a>, <a href="http://skittle-php.org/">skittle</a> and <a href="http://substrate-php.org/">substrate</a>. Every directory in vendors/ is added to the include path, so requiring skittle_Skittle.php is as easy as require_once('skittle_Skittle.php'), or if using the hc class loader, hc_core_ClassLoader::load('skittle_Skittle');.  While this is all fine and good, sometimes it is useful to use local development versions of a library that may not actually be maintained in the current projects distributrion. For instance, I include a version of hc-php, skittle, substrate, halo and <a href="http://repose-php.org/">repose</a> with a project, but I also actively develop on each of these packages. To use my local development files, I ensure the (optional) bootstrap file named halo-site-bootstrap.php exists and do something like the following:</p>
+<p><p><a href="https://gist.github.com/288220">https://gist.github.com/288220</a></p></p>
+<p>This file should be set on svn:ignore and not be distributed to your production environment. Just make certain that the final packages in vendors/ works!</p>

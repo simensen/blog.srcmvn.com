@@ -1,0 +1,18 @@
+---
+layout: post
+title: Finding the type of node with libxml++
+published: true
+tags:
+- c++
+- xml
+date: '2009-08-13 11:24:00'
+posterous_id: 10668851
+posterous_url: http://blog.srcmvn.com/finding-the-type-of-node-with-libxml
+posterous_slug: finding-the-type-of-node-with-libxml
+permalink: finding-the-type-of-node-with-libxml/index.html
+posterous_images: []
+---
+<p>There have been a few times that I have wanted to be able to dig into a Node with libxml++ to find out more raw information, like the type of node it is. I haven't had much luck with the Node class itself, but I did find the cobj() reference. It returns a reference to a _xmlNode structure that contains the name and type of node being worked with. I have not yet found many good examples of what one can do with an _xmlNode structure, but I did find the basic information I was looking for.</p>
+<p><p><a href="https://gist.github.com/288197">https://gist.github.com/288197</a></p></p>
+<p>I ended up needing to add the following to the header files as well:</p>
+<p><p><a href="https://gist.github.com/288199">https://gist.github.com/288199</a></p></p>

@@ -1,0 +1,13 @@
+---
+layout: post
+title: Mixing multiple values for the same key and file uploads using cURL and PHP
+published: true
+tags: []
+date: '2008-12-29 09:46:00'
+posterous_id: 10668786
+posterous_url: http://blog.srcmvn.com/mixing-multiple-values-for-the-same-key-and-f
+posterous_slug: mixing-multiple-values-for-the-same-key-and-f
+permalink: mixing-multiple-values-for-the-same-key-and-f/index.html
+posterous_images: []
+---
+<p>I've run into a limitation in the cURL bindings for PHP. It appears there is no easy way to send the same multiple values for the same key for postfields. Most of the workarounds I have come across for this have involved creating the URL encoded post fields by hand tag=foo&amp;tag=bar&amp;tag=baz) instead of using the associative array version of CURLOPT_POSTFIELDS.  It seems like a pretty common thing to need to support so I feel like I must have missed something. Is this really the only way to handle multiple values for the same key?  While this workaround might be considered workable (if not really annoying), my main problem is that I need to be able to do multiple values for the same key and also support file upload. As far as I can tell, file upload more or less requires to use the associate arravy version of CURLOPT_POSTFIELDS. So I feel like I am stuck.  I have <a href="http://curl.haxx.se/mail/curlphp-2008-12/0009.html">posted</a>&nbsp;about this problem in more detail on the cURL PHP mailing list in the hopes that someone there has some ideas about this.  Suggestions or hints on where I can look for more information on this are greatly appreciated!</p>

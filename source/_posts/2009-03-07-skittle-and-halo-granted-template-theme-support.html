@@ -1,0 +1,13 @@
+---
+layout: post
+title: Skittle (and Halo) granted template Theme support!
+published: true
+tags: []
+date: '2009-03-07 13:04:00'
+posterous_id: 10668821
+posterous_url: http://blog.srcmvn.com/skittle-and-halo-granted-template-theme-suppo
+posterous_slug: skittle-and-halo-granted-template-theme-suppo
+permalink: skittle-and-halo-granted-template-theme-suppo/index.html
+posterous_images: []
+---
+<p>I have been spending a lot of time thinking about how to handle themes in <a href="http://halo-php.org/">Halo</a> (by way of <a href="http://skittle-php.org/">Skittle</a> or otherwise) and I think I have found a somewhat elegant solution.  Setting HALO_THEMES_DIR to a directory that contains individual theme directories that are each expected to contain the same hierarchy as the HALO_VIEWS_DIR. Skittle will first check the theme directory to see if the requested template exists there. If it does not, it will fallback to the standard view directory.&nbsp;The single example now uses a default theme to show how this feature can be used.  I am suddenly having the urge to have a database backed implementation of&nbsp;hc_configuration_IConfiguration&nbsp;but that can come later.  New snapshots of both <a href="http://code.google.com/p/halo-php/downloads/list">Halo</a> and <a href="http://code.google.com/p/skittle-php/downloads/list">Skittle</a> have been made available for download.</p>
